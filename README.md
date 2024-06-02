@@ -1,7 +1,13 @@
 # CiniHub Movie App - SetUp
 
 **Note :** **If You are Using JIO data or JIO Fibernet the api will not Work and you might need to use VPN else the API will get Restricted**
+If the Register Module does not work, use login module
 
+## Login Credentials
+
+hemanth.m2021csbs@sece.ac.in
+
+hemanth@123
 ---
 
 # Deployment
