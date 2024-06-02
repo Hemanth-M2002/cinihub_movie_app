@@ -2,77 +2,26 @@
 
 **Note :** **If You are Using JIO data or JIO Fibernet the api will not Work and you might need to use VPN else the API will get Restricted**
 
+---
+
+# Deployment
+
+Vercel: [CiniHub-Vercel](https://cinihub.vercel.app/)
+
+
 
 ---
-**Video Demo**
+# **Video Demo**
 
+https://github.com/Hemanth-M2002/cinihub_movie_app/assets/107427701/a807c719-e541-43ae-93b7-1c7be5b61ed8
 
+---
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ScreenShots
+![Screenshot (451)](https://github.com/Hemanth-M2002/cinihub_movie_app/assets/107427701/13f52cab-a111-4543-aee2-3147827a6a7a)
+![Screenshot (450)](https://github.com/Hemanth-M2002/cinihub_movie_app/assets/107427701/46942312-5400-41f0-841f-7835588e31c5)
+![Screenshot (457)](https://github.com/Hemanth-M2002/cinihub_movie_app/assets/107427701/77680541-dac8-4c6f-bd3f-8440c7ba3933)
+![Screenshot (456)](https://github.com/Hemanth-M2002/cinihub_movie_app/assets/107427701/5bef798c-0922-42a0-8316-c22b6316578a)
+![Screenshot (454)](https://github.com/Hemanth-M2002/cinihub_movie_app/assets/107427701/1da54586-aa54-495c-9c4b-8c3293181e8a)
+![Screenshot (453)](https://github.com/Hemanth-M2002/cinihub_movie_app/assets/107427701/e398ba6c-f3dd-43ee-b068-bac23acef054)
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
