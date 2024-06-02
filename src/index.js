@@ -5,6 +5,9 @@ import Login from './components/Login';
 import Register from './components/Register';
 import {BrowserRouter,Route,Routes} from 'react-router-dom';
 import Home from './components/Home';
+import Home1 from './components/dashboard/Home1';
+import MyList from './components/dashboard/MyList';
+import SearchResults from './components/dashboard/SearchResults';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,6 +17,9 @@ root.render(
       <Route path='/' element={<Home/>}/>
       <Route path="/login" element={<Login/>}/>
       <Route path='/signup' element={<Register/>}/>
+      <Route path='/dashboard' element={<Home1/>}/>
+      <Route path="/search" element={<SearchResults />} />
+      <Route path='/mylist' element={<MyList/>}/>
     </Routes>
     </BrowserRouter>
   </React.StrictMode>
