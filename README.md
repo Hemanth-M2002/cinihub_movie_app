@@ -1,4 +1,10 @@
-# Getting Started with Create React App
+# CiniHub Movie App - SetUp
+
+**Note :** **If You are Using JIO data or JIO Fibernet the api will not Work and you might need to use VPN else the API will get Restricted**
+
+##Video Demo
+
+<iframe width="560" height="315" src="https://youtu.be/y54pNTKcvcw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
