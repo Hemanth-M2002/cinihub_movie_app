@@ -5,9 +5,9 @@ If the Register Module does not work, use login module
 
 ## Login Credentials
 
-hemanth.m2021csbs@sece.ac.in
+test123@gmail.com
 
-hemanth@123
+test@123
 ---
 
 # Deployment
