@@ -33,7 +33,6 @@ const Register = () => {
 
     try {
       await createUserWithEmailAndPassword(firebaseAuth, email, password);
-      // Redirect to a different page or show a success message
       navigate("/login");
     } catch (error) {
       setError(error.message);
@@ -48,14 +47,6 @@ const Register = () => {
   const toggleConfirmPasswordVisibility = () => {
     setConfirmPasswordVisible(!confirmPasswordVisible);
   };
-
-  const handleRegister = () => {
-    navigate('/login'); // Navigate to the login page
-  };
-
-  const navRegister = () => {
-    navigate('/login'); // Navigate to the login page
-  }
 
   return (
     <section className="bg-gray-50 min-h-screen flex items-center justify-center p-5">
@@ -86,7 +77,7 @@ const Register = () => {
               </svg>
             </div>
             <div className="relative">
-              <input value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} className="p-2 rounded-xl border w-full text-black" type={confirmPasswordVisible? "text" : "password"} name="confirmPassword" placeholder="Confirm Password" />
+              <input value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} className="p-2 rounded-xl border w-full text-black" type={confirmPasswordVisible ? "text" : "password"} name="confirmPassword" placeholder="Confirm Password" />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -100,11 +91,9 @@ const Register = () => {
                 <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
               </svg>
             </div>
-            <button onClick={navRegister} type="submit" className="bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300" disabled={loading}>
-              {loading? (
-                <svg className="animate-spin h-5 w-5 mr-3" viewBox="0 0 24 24">
-                  <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="4" />
-                </svg>
+            <button type="submit" className="bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300" disabled={loading}>
+              {loading ? (
+                <div className="animate-spin h-5 w-5 border-4 border-white border-t-transparent rounded-full"></div>
               ) : (
                 'Register'
               )}
@@ -133,14 +122,8 @@ const Register = () => {
 
           <div className="mt-3 text-xs flex justify-between items-center text-[#002D74]">
             <p>Already have an account?</p>
-            <button onClick={handleRegister} className="py-2 px-5 bg-white border rounded-xl hover:scale-110 duration-300 " disabled={loading}>
-              {loading? (
-                <svg className="animate-spin h-5 w-5 mr-3" viewBox="0 0 24 24">
-                  <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="4" />
-                </svg>
-              ) : (
-                'Login'
-              )}
+            <button onClick={() => navigate('/login')} className="py-2 px-5 bg-white border rounded-xl hover:scale-110 duration-300" disabled={loading}>
+              Login
             </button>
           </div>
         </div>

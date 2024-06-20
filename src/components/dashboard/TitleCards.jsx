@@ -5,6 +5,7 @@ const TitleCards = ({ title, category, userId }) => {
   const cardsRef = useRef();
   const [apiData, setApiData] = useState([]);
   const [trailerKey, setTrailerKey] = useState(null);
+  const [myList, setMyList] = useState([]);
 
   const scrollLeft = () => {
     cardsRef.current.scrollBy({
@@ -43,6 +44,14 @@ const TitleCards = ({ title, category, userId }) => {
       .catch(err => console.error('API fetch error:', err));
   }, [category]);
 
+  useEffect(() => {
+    axios.get(`http://localhost:7001/api/user/list/${userId}`)
+      .then(response => {
+        setMyList(response.data);
+      })
+      .catch(error => console.error('Error fetching my list:', error));
+  }, [userId]);
+
   const fetchTrailer = (movieId) => {
     const options = {
       method: 'GET',
@@ -56,8 +65,8 @@ const TitleCards = ({ title, category, userId }) => {
       .then(response => response.json())
       .then(response => {
         if (response.results && response.results.length > 0) {
-          // Assuming the first result is the trailer
-          setTrailerKey(response.results[0].key);
+          const youtubeId = response.results.find(video => video.site === 'YouTube').key;
+          setTrailerKey(youtubeId);
         } else {
           console.error('No trailer found for this movie');
         }
@@ -72,6 +81,7 @@ const TitleCards = ({ title, category, userId }) => {
   const handleCloseTrailer = () => {
     setTrailerKey(null);
   };
+
   const handleAddToList = (movieData) => {
     const moviePayload = {
       userId,
@@ -81,18 +91,18 @@ const TitleCards = ({ title, category, userId }) => {
     };
 
     axios.post('http://localhost:7001/api/user/add', moviePayload)
-      .then(response => {
+     .then(response => {
         console.log(response.data);
+        setMyList([...myList, moviePayload]);
       })
-      .catch(error => {
+     .catch(error => {
         console.error('Error adding movie to list:', error);
       });
   };
 
-
   return (
     <div className="m-5 relative">
-      <h2 className="text-2xl font-bold mb-4">{title ? title : "Popular on Netflix"}</h2>
+      <h2 className="text-2xl font-bold mb-4">{title? title : "Popular on Netflix"}</h2>
       <div className="flex items-center relative">
         <button
           className="absolute top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white border-none p-2 cursor-pointer z-10 rounded-full left-2 hover:bg-opacity-80"
@@ -144,6 +154,25 @@ const TitleCards = ({ title, category, userId }) => {
           ></iframe>
         </div>
       )}
+      <h2 className="text-2xl font-bold mt-8 mb-4">My List</h2>
+      <div className="flex overflow-x-scroll py-5 scroll-smooth w-full">
+        {myList.map((movie, index) => (
+          <div
+            key={index}
+            className="relative mr-4 transition-transform duration-300 transform hover:scale-105 flex-shrink-0"
+            style={{ objectFit: 'contain', borderRadius: '10px', maxWidth: 'auto', width: '180px', height: '250px' }}
+          >
+            <img
+              src={`https://image.tmdb.org/t/p/w500${movie.posterUrl}`}
+              className="w-full h-full object-cover rounded-lg cursor-pointer"
+              alt={movie.title}
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 transition-opacity duration-300 rounded-lg hover:opacity-100">
+              <p className="text-white text-lg mb-2 text-center px-2">{movie.title}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
