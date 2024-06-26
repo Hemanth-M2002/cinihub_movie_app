@@ -154,7 +154,7 @@ const TitleCards = ({ title, category, userId }) => {
           ></iframe>
         </div>
       )}
-      <h2 className="text-2xl font-bold mt-8 mb-4">My List</h2>
+      {/* <h2 className="text-2xl font-bold mt-8 mb-4">My List</h2> */}
       <div className="flex overflow-x-scroll py-5 scroll-smooth w-full">
         {myList.map((movie, index) => (
           <div
