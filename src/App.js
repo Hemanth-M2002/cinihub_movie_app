@@ -7,15 +7,14 @@ import Home1 from './components/dashboard/Home1';
 import MyList from './components/dashboard/MyList';
 import SearchResults from './components/dashboard/SearchResults';
 import MovieDetails from './components/dashboard/MovieDetails';
-import Navbar from './components/dashboard/Navbar';
+
 
 
 const Main = () => {
-  const location = useLocation();
+
 
   return (
     <>
-      {location.pathname !== '/' && <Navbar />}
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path="/login" element={<Login />} />
