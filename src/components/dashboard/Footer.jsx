@@ -8,22 +8,22 @@ import './Footer.css'
 const Footer = () => {
   return (
     <div className='footer'>
-      <div className="footer-icons">
+      <div className="footer-icons flex justify-center space-x-8">
         <button><img src={facebook} alt="" /></button>
         <button><img src={instagram} alt="" /></button>
         <button><img src={twitter} alt="" /></button>
         <button><img src={youtube} alt="" /></button>
       </div>
-      <ul>
+      <ul >
         <li>Audio Description</li>
         <li>Help Centre</li>
-        <li>Gift Cards</li>
+        {/* <li>Gift Cards</li> */}
         <li>Terms of Use</li>
         <li>Privacy</li>
-        <li>Audio Description</li>
+        {/* <li>Audio Description</li> */}
         <li>Contact Us</li>
       </ul>
-      <p className='copyright-text'>© Tech Innovators Inc. 2024</p>
+      <p className='copyright-text'>© HM Innovators Inc. 2024</p>
     </div>
   )
 }

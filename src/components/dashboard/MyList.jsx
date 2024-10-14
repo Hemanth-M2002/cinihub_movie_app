@@ -7,7 +7,7 @@ const MyList = ({ userId }) => {
   useEffect(() => {
     const fetchMyList = async () => {
       try {
-        const response = await axios.get(`http://localhost:7001/api/user/liked/${userId}`);
+        const response = await axios.get(`http://localhost:3001/api/user/liked/${userId}`);
         setMyList(response.data);
         console.log(response.data);
       } catch (error) {

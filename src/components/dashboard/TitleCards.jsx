@@ -45,7 +45,7 @@ const TitleCards = ({ title, category, userId }) => {
   }, [category]);
 
   useEffect(() => {
-    axios.get(`http://localhost:7001/api/user/list/${userId}`)
+    axios.get(`http://localhost:3001/api/user/list/${userId}`)
       .then(response => {
         setMyList(response.data);
       })
@@ -83,22 +83,46 @@ const TitleCards = ({ title, category, userId }) => {
   };
 
   const handleAddToList = (movieData) => {
+    // Check if the movie is already in the user's list
+    const alreadyInList = myList.some(movie => movie.movieId === movieData.id);
+    if (alreadyInList) {
+      console.log('This movie is already in your list.');
+      return; // Early return if the movie is already in the list
+    }
+  
     const moviePayload = {
-      userId,
+      userId : userId,
       movieId: movieData.id,
       title: movieData.original_title,
       posterUrl: movieData.backdrop_path,
     };
-
-    axios.post('http://localhost:7001/api/user/add', moviePayload)
-     .then(response => {
+  
+    axios.post('http://localhost:3001/api/user/add', moviePayload)
+      .then(response => {
         console.log(response.data);
+        // Update local state to reflect the added movie
         setMyList([...myList, moviePayload]);
       })
-     .catch(error => {
+      .catch(error => {
         console.error('Error adding movie to list:', error);
       });
   };
+
+  // Use effect to retrieve the user's list when the component mounts
+useEffect(() => {
+  const fetchMyList = async () => {
+    try {
+      const response = await axios.get(`http://localhost:3001/api/user/list/${userId}`);
+      setMyList(response.data);
+    } catch (error) {
+      console.error('Error fetching my list:', error);
+    }
+  };
+
+  if (userId) { // Ensure userId is available before fetching
+    fetchMyList();
+  }
+}, [userId]);
 
   return (
     <div className="m-5 relative">

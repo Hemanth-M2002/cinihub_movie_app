@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import Navbar from '../dashboard/Navbar';
 import Footer from '../dashboard/Footer';
 
 const MovieDetails = () => {
@@ -37,7 +36,6 @@ const MovieDetails = () => {
 
   return (
     <div className='movie-details'>
-      <Navbar />
       {movieData && (
         <div className="p-6">
           <h1 className="text-4xl font-bold mb-4">{movieData.title}</h1>

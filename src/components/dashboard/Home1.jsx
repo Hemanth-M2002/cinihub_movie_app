@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import Navbar from '../dashboard/Navbar';
+import Navbar from '../dashboard/Navbar'; 
 import play from '../../assets/play_icon.png';
 import info from '../../assets/info_icon.png';
 import TitleCards from '../dashboard/TitleCards';
@@ -85,9 +84,9 @@ const Home1 = () => {
                   <button onClick={handlePlay} className='flex items-center gap-2 px-5 py-2.5 bg-white text-black font-semibold rounded-md hover:bg-white/75'>
                     <img src={play} className="w-6" alt="Play Icon" /> Play
                   </button>
-                  <Link to={`/movie/${movieId}`} className='flex items-center gap-2 px-5 py-2.5 bg-gray-600 text-white font-semibold rounded-md hover:bg-gray-700'>
+                  <button onClick={() => window.location.href = `/movie/${movieId}`} className='flex items-center gap-2 px-5 py-2.5 bg-gray-600 text-white font-semibold rounded-md hover:bg-gray-700'>
                     <img src={info} className="w-6" alt="Info Icon" /> More Info
-                  </Link>
+                  </button>
                 </div>
               </div>
             </div>
@@ -116,7 +115,7 @@ const Home1 = () => {
       {!isPlaying && (
         <div className="pl-6">
           <TitleCards title="Blockbuster Movies" category="top_rated" />
-          <TitleCards title="Only on Netflix" category="popular" />
+          <TitleCards title="Only on Cinihub" category="popular" />
           <TitleCards title="Upcoming" category="upcoming" />
           <TitleCards title="Top Picks for You" category="now_playing" />
         </div>

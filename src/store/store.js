@@ -46,7 +46,7 @@ const store = () => {
 
   // Fetch user's liked movies
   const fetchLikedMovies = async () => {
-    const { data: { movies } } = await axios.get(`http://localhost:7001/api/user/liked/${email}`);
+    const { data: { movies } } = await axios.get(`http://localhost:3001/api/user/liked/${email}`);
     setMovies(movies);
   };
 
@@ -57,7 +57,7 @@ const store = () => {
       data: movie
     };
 
-    axios.post('http://localhost:7001/api/user/add', moviePayload)
+    axios.post('http://localhost:3001/api/user/add', moviePayload)
       .then(response => {
         console.log(response.data);
         fetchLikedMovies();
@@ -69,7 +69,7 @@ const store = () => {
 
   // Remove movie from liked movies
   const removeFromLikedMovies = async (movieId) => {
-    axios.put('http://localhost:7001/api/user/remove', { email, movieId })
+    axios.put('http://localhost:3001/api/user/remove', { email, movieId })
       .then(response => {
         console.log(response.data);
         fetchLikedMovies();
